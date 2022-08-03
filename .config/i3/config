@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Cantarell 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -45,7 +45,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+q kill
@@ -180,11 +180,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # gaps configuration
-for_window [class=".*"] border pixel 0
-gaps outer 0
-gaps inner 10
+# for_window [class=".*"] border pixel 0
+# gaps outer 0
+# gaps inner 10
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
+bar {
+	status_command i3status
+}
+# get rid of tearing on nvidia
+exec_always nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 exec_always nitrogen --restore
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
