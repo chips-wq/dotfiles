@@ -7,8 +7,9 @@
  */
 //static char *font = "MesloLGM Nerd Font:pixelsize=18:antialias=true:autohint=true";
 //static char *font2[] = {"MesloLGM Nerd Font:pixelsize=18:antialias=true:autohint=true"};
+
 static char *font = "JetBrainsMono Nerd Font:pixelsize=18:antialias=true:autohint=true";
-static char *font2[] = {"JetBrainsMono Nerd Font:pixelsize=18:antialias=true:autohint=true"};
+static char *font2[] = {"MesloLGM Nerd Font:pixelsize=18:antialias=true:autohint=true"};
 static int borderpx = 20;
 
 /*
@@ -201,7 +202,6 @@ static uint forcemousemod = ShiftMask;
  */
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
-		{ "fontalt0",     STRING,  &font2[0] },
 		{ "color0",       STRING,  &colorname[0] },
 		{ "color1",       STRING,  &colorname[1] },
 		{ "color2",       STRING,  &colorname[2] },
